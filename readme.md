@@ -25,15 +25,11 @@ Download zip and extract to folder.
 
 git via HTTPS:
 
-    $ git clone https://github.com/epistemex/transformation-matrix-js.git
+    $ git clone https://github.com/pawlufelice/transformation-matrix-js.git
 
 git via SSH:
 
-    $ git clone git@github.com:epistemex/transformation-matrix-js.git
-
-Using Bower:
-
-    $ bower install transformation-matrix-js
+    $ git clone git@github.com:pawlufelice/transformation-matrix-js.git
 
 Using NPM
 
@@ -45,16 +41,17 @@ Usage
 
 Just include the script and create a new instance:
 
-    var matrix = new Matrix([context]);
+    var matrix = new Matrix();
+    var matrix = new Matrix(a, b, c, d, e, f);
 
-You can supply an optional canvas 2D context as argument, which will be 
-synchronized with the transformations that are applied to the matrix
-object.
+    [a c e]
+    [b d f]
+    [0 0 1]
 
 Using it with Node - use npm to install the package first, then:
 
-    var demo = require("transformation-matrix-js");
-    var matrix = new demo.Matrix();
+    import Matrix from "transformation-matrix-js";
+    var matrix = new Matrix();
 
 Some of the methods:
 
@@ -106,12 +103,11 @@ Get current transform matrix properties:
 
 Apply to a point:
 
-    var tPoint = matrix.applyToPoint(x, y);
+    var tPoint = matrix.applyToPoint({x, y});
 
 Apply to an Array with point objects or point pair values:
 
     var tPoints = matrix.applyToArray([{x: x1, y: y1}, {x: x2, y: y2}, ...]);
-    var tPoints = matrix.applyToArray([x1, y1, x2, y2, ...]);
     var tPoints = matrix.applyToTypedArray(...);
 
 or apply to a canvas context (other than optionally referenced in constructor):

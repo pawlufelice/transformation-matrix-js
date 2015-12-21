@@ -1,0 +1,32 @@
+{
+  "name": "transformation-matrix-js",
+  "version": "0.0.0",
+  "description": "Matrix manipulation library for JS",
+  "main": "src/matrix.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./src/matrix.js -o matrix.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pawlufelice/transformation-matrix-js.git"
+  },
+  "keywords": [
+    "matrix",
+    "matrices",
+    "javascript",
+    "2D"
+  ],
+  "author": "Paul Felice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawlufelice/transformation-matrix-js/issues"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-cli": "^6.3.17"
+  }
+}
